@@ -23,6 +23,20 @@
                 }
                 %>
             </td>
+            <td><%
+                try {
+                    out.println((InetAddress.getClientIPAddress()));
+                } catch (Exception e) {
+                    out.println("IMPOSSIBILE DETERMINARE IP ADDRESS");
+                }
+            <td><%
+                try {
+                    out.println((InetAddress.getClientMACAddress()));
+                } catch (Exception e) {
+                    out.println("IMPOSSIBILE DETERMINARE MAC ADDRESS");
+                }
+                %>
+            </td>
         </tr>
         <tr>
             <td>REAL PATH</td>
