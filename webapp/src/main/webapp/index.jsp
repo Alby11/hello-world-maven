@@ -1,4 +1,3 @@
-<%@page import="Ambiente.ServiceEnv" %>
 <%@page import="java.net.InetAddress"%>
 <%@page contentType="text/html" pageEncoding="windows-1252"%>
 
@@ -28,14 +27,6 @@
         <tr>
             <td>REAL PATH</td>
             <td><% out.println(this.getServletContext().getRealPath("/WEB-INF")); %></td>
-        </tr>
-        <tr>
-            <td>FRAMEWORK VERSION</td>
-            <td><% out.println(ServiceEnv.getKarlyFrameworkVersion());%></td>
-        </tr>
-        <tr>
-            <td>PARAMETRI FRAMEWORK</td>
-            <td><% out.println(ServiceEnv.getFullConfParam());%></td>
         </tr>
     </tbody>
 </table>
