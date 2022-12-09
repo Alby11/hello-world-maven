@@ -29,6 +29,7 @@
                 } catch (Exception e) {
                     out.println("IMPOSSIBILE DETERMINARE IP ADDRESS");
                 }
+                %>
             <td><%
                 try {
                     out.println((InetAddress.getLocalHost().getAddress()));
