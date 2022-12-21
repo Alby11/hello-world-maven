@@ -45,7 +45,7 @@ jobs:
           name: webapp
           path: webapp/target
       - name: Display structure of downloaded files
-        run: ls -R
+        run: pwd ; ls -R
         working-directory: webapp/target
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
