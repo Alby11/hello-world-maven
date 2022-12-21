@@ -37,9 +37,16 @@ jobs:
       # - run: cp /home/runner/work/hello-world-maven/hello-world-maven/webapp/target/webapp.war webapp/target
       - uses: actions/upload-artifact@v3
         with:
-          name: Package
+          name: webapp
           # path: staging
           path: /home/runner/work/hello-world-maven/hello-world-maven/webapp/target/webapp.war
+      - uses: actions/download-artifact@v3
+        with:
+          name: webapp
+          path: webapp/target
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: webapp/target
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     # - name: Update dependency graph
