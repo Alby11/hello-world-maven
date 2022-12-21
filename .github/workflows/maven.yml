@@ -29,14 +29,15 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
       - run: mvn --batch-mode --update-snapshots verify
-      - run: mkdir staging && cp target/*.* staging
+      # - run: mkdir staging && cp target/*.* staging
       # - run: mkdir staging && cp /home/runner/work/hello-world-maven/hello-world-maven/webapp/target/webapp.war staging
       # - run: mkdir -p webapp/target
       # - run: cp /home/runner/work/hello-world-maven/hello-world-maven/webapp/target/webapp.war webapp/target
       - uses: actions/upload-artifact@v3
         with:
           name: Package
-          path: staging
+          # path: staging
+          path: /home/runner/work/hello-world-maven/hello-world-maven/webapp/target/webapp.war
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     # - name: Update dependency graph
