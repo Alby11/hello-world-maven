@@ -1,0 +1,13 @@
+version: "3"
+services:
+  main:
+    image: fratellicarli/hello-world-maven:latest
+    hostname: hello-world-maven
+    ports:
+      - "8090:8080"
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root/.docker/config.json:/config.json
+    command: --interval 30 fratellicarli/hello-world-maven:latest
